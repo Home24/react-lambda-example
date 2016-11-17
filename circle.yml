@@ -28,6 +28,4 @@
         -
           git config --global user.name 'Circle CI'
         -
-          ./tag.sh
-        -
           npm run deploy-lambda
