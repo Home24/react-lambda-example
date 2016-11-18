@@ -20,6 +20,7 @@ function JSONize(str) {
  * @return {Object}    Returns a JS Object obtained from reading the parameters.
  */
 function parse(str) {
+
   return JSON.parse(JSONize(str.replace(/=/g, ':')));
 }
 
@@ -55,6 +56,7 @@ function createFullPath(pathParts, queryString) {
  */
 export const mainHandler = co.wrap(function *(event, context) {
   try {
+    console.log(event);
     const path = parse(event.path);
     const querystring = parse(event.querystring);
     const fullPath = createFullPath(path, querystring);
