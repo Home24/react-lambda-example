@@ -56,7 +56,7 @@ function createFullPath(pathParts, queryString) {
  */
 export const mainHandler = co.wrap(function *(event, context) {
   try {
-    console.log(event);
+    console.log(event, context);
     const path = event.path;
     const querystring = event.querystring;
     const fullPath = createFullPath(path, querystring);
