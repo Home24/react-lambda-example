@@ -61,7 +61,7 @@ export const mainHandler = co.wrap(function *(event, context) {
     const [urlPath, renderedContent] = yield render(fullPath);
     context.succeed({urlPath, variableHTML: renderedContent});
   } catch (error) {
-    console.error('ERROR: ', error);
+    console.error('ERROR: ', error, error.stack);
     context.succeed({error});
   }
 });
